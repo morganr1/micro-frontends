@@ -10,6 +10,7 @@ const prodConfig = {
   mode: "production",
   output: {
     filename: "[name].[contenthash].js", // all built files will use this as a template - (Name + Hash) for caching
+    publicPath: "/container/latest/",
   },
   plugins: [
     new ModuleFederationPlugin({
