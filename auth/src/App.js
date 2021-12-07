@@ -4,23 +4,30 @@ import {
   StylesProvider,
   createGenerateClassName,
 } from "@material-ui/core/styles";
-import Landing from "./components/Landing";
-import Pricing from "./components/Pricing";
+
+import Signin from "./components/Signin";
+import Signup from "./components/Signup";
 
 const generateClassName = createGenerateClassName({
-  productionPrefix: "ma",
+  productionPrefix: "au",
 });
 
 // Want to use memory history rather than browser history as the container will be the orchestrator of the browser navigation.
 // Using Router as u can simply provider history object to it to keep consistency
-export default ({ history }) => {
+export default ({ history, onSignIn }) => {
   return (
     <div>
       <Router history={history}>
         <StylesProvider generateClassName={generateClassName}>
           <Switch>
-            <Route exact path="/pricing" component={Pricing} />
-            <Route path="/" component={Landing} />
+            <Route
+              path="/auth/signin"
+              render={() => <Signin onSignIn={onSignIn} />}
+            />
+            <Route
+              path="/auth/signup"
+              render={() => <Signup onSignIn={onSignIn} />}
+            />
           </Switch>
         </StylesProvider>
       </Router>

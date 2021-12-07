@@ -16,6 +16,7 @@ const prodConfig = {
     new ModuleFederationPlugin({
       name: "container", // not required but conventional
       remotes: {
+        auth: `auth@${domain}/auth/latest/auth/latest/remoteEntry.js`
         marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`, // use an additional marketing folder to ensure remoteEntry files are uniquely identifiable.
       },
       shared: packageJson.dependencies,
