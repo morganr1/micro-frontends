@@ -17,6 +17,7 @@ const prodConfig = {
       name: "container", // not required but conventional
       remotes: {
         auth: `auth@${domain}/auth/latest/remoteEntry.js`,
+        dashboard: `auth@${domain}/dashboard/latest/remoteEntry.js`,
         marketing: `marketing@${domain}/marketing/latest/remoteEntry.js`, // use an additional marketing folder to ensure remoteEntry files are uniquely identifiable.
       },
       shared: packageJson.dependencies,
