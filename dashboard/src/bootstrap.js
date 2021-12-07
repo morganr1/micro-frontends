@@ -7,7 +7,7 @@ const mount = (ele) => {
 };
 
 // Check if we're in development mode and in isolation
-// Call mount immediately
+// invoke mount
 if (process.env.NODE_ENV === "development") {
   const devRoot = document.querySelector("#_dashboard-dev-root");
   devRoot && mount(devRoot);
